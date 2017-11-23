@@ -31,7 +31,7 @@ public class PreOrderInOrderPostOrderTraversal {
 		postOrderTraversal(root);
 	}
 
-	private static void postOrderTraversal(Node root) {
+	 static void postOrderTraversal(Node root) {
 		if(root == null)
 			return;
 		
@@ -40,7 +40,7 @@ public class PreOrderInOrderPostOrderTraversal {
 		System.out.print(root.data + " ");
 	}
 
-	private static void inOrderTraversal(Node root) {
+	 static void inOrderTraversal(Node root) {
 		if(root == null)
 			return;
 		
@@ -50,7 +50,7 @@ public class PreOrderInOrderPostOrderTraversal {
 		
 	}
 
-	private static void preOrderTraversal(Node root) {
+	 static void preOrderTraversal(Node root) {
 		if(root == null)
 			return;
 		
