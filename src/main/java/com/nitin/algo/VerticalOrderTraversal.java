@@ -17,7 +17,7 @@ The output of print this tree vertically will be:
 3
 7
  * ----------------------------------------------------------------------------------------------------------------------------------------------
- * BIG O Details: time O(n) -- space O(1)
+ * BIG O Details: time O(n) -- space O(n)
  */
 
 package com.nitin.algo;

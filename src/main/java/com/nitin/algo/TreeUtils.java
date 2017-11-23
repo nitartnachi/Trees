@@ -52,7 +52,7 @@ public class TreeUtils {
 	}
 	
 	// create tree level order
-	static Node insertLevelOrder(int[] arr, Node node, int arrPos) {
+	public static Node insertLevelOrder(int[] arr, Node node, int arrPos) {
 		
 		Node root = null;
 		if(arrPos < arr.length) {

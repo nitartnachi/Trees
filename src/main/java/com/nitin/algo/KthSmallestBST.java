@@ -1,5 +1,8 @@
 /*
  * Given a binary search tree, write a function kthSmallest to find the kth smallest element in it. (1 ≤ k ≤ BST's total elements)
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * BIG O Details: time O(n) -- space O(n)
  */
 
 package com.nitin.algo;
