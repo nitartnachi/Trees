@@ -36,7 +36,7 @@ public class InvertBinaryTree {
 		
 	}
 
-	private static void invertBinaryTree(Node root) {
+	static void invertBinaryTree(Node root) {
 		if (root == null)
 			return;
 		Node temp = root.left;
