@@ -20,22 +20,33 @@ public class TreeUtils {
 
 	public static void main(String[] args) {
 		int[] arr = {1,2,3,4,5,6,7,8,9};
-		System.out.println("==========Create BST from sorted array and print tree==========");
+	
 		Node root = sortedArrayToBST(arr, 0, arr.length - 1);
+		printBST(root);
+		
+		root = insertLevelOrder(arr, null, 0);
+		printLevelOrder(root);
+	}
+	
+	public static void printLevelOrder(Node root) {
+		System.out.println("==========LevelOrder Tree View==========");
+		System.out.println("           " + root.data);
+		System.out.println("       " + root.left.data + "       " + root.right.data);
+		System.out.println("    " + root.left.left.data + "    " + root.left.right.data + "   " + root.right.left.data + "    " + root.right.right.data);
+		System.out.println("  " + root.left.left.left.data + "   " + root.left.left.right.data);
+		
+		
+	}
+
+	public static void printBST(Node root) {
+		System.out.println("==========BST Tree View==========");
 		System.out.println("           " + root.data);
 		System.out.println("       " + root.left.data + "       " + root.right.data);
 		System.out.println("    " + root.left.left.data + "    " + root.left.right.data + "   " + root.right.left.data + "    " + root.right.right.data);
 		System.out.println("          " + root.left.right.right.data + "         " + root.right.right.right.data);
 		
-		System.out.println("==========Create tree in level order from given array==========");
-		root = insertLevelOrder(arr, null, 0);
-		System.out.println("           " + root.data);
-		System.out.println("       " + root.left.data + "       " + root.right.data);
-		System.out.println("    " + root.left.left.data + "    " + root.left.right.data + "   " + root.right.left.data + "    " + root.right.right.data);
-		System.out.println("  " + root.left.left.left.data + "   " + root.left.left.right.data);
-
 	}
-	
+
 	//sorted array to BST
 	public static Node sortedArrayToBST(int[] arr, int start, int end) {
 		// Base case
