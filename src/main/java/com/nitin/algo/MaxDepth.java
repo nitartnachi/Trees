@@ -20,10 +20,11 @@ public class MaxDepth {
 	private static int maxDepth(Node root) {
 		if(root == null)
 			return 0;
-		int leftMax = maxDepth(root.left) + 1;
-		int rightMax = maxDepth(root.right) + 1;
 		
-		return Math.max(leftMax, rightMax);
+		int leftMax = maxDepth(root.left);
+		int rightMax = maxDepth(root.right);
+		
+		return Math.max(leftMax, rightMax) + 1;
 	}
 
 }
