@@ -59,7 +59,7 @@ public class NaryTreeSerializeDeserialize {
 		
 		sb.append(root.key);
 		Node[] children = root.child;
-		for(int i = 0; i < children.length && children[i] != null; i++)
+		for(int i = 0; i < children.length; i++)
 			serialize(sb, children[i]);
 		sb.append(MARKER);
 	}
