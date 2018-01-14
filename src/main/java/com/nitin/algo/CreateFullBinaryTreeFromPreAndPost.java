@@ -21,7 +21,7 @@ Following are examples of Full Trees.
        4     5
            /   \  
           6    7
-                  
+
 
           1
         /   \
@@ -57,6 +57,65 @@ We recursively follow the above approach and get the following tree.
  */
 package com.nitin.algo;
 
+import com.nitin.algo.TreeUtils.Node;
+
 public class CreateFullBinaryTreeFromPreAndPost {
+	
+	private static int preindex;
+
+	private static Node constructTreeUtil(int pre[], int post[], int l, 
+			int h, int size) {
+
+		// Base case
+		if (preindex >= size || l > h)
+			return null;
+
+		// The first node in preorder traversal is 
+		// root. So take the node at preIndex from 
+		// preorder and make it root, and increment 
+		// preIndex
+		Node root = new Node(pre[preindex]);
+		preindex++;
+
+		// If the current subarry has only one 
+		// element, no need to recur or 
+		// preIndex > size after incrementing
+		if (l == h || preindex >= size)
+			return root;
+		int i;
+
+		// Search the next element of pre[] in post[]
+		for (i = l; i <= h; i++) 
+		{
+			if (post[i] == pre[preindex])
+				break;
+		}
+		// Use the index of element found in 
+		// postorder to divide postorder array 
+		// in two parts. Left subtree and right subtree
+		if (i <= h) 
+		{
+			root.left = constructTreeUtil(pre, post, l, i, size);
+			root.right = constructTreeUtil(pre, post, i + 1, h, size);
+		}
+		return root;
+	}
+
+	private static Node constructTree(int pre[], int post[], int size) {
+		preindex = 0;
+		return constructTreeUtil(pre, post, 0, size - 1, size);
+	}
+
+	public static void main(String[] args) {
+
+		int pre[] = { 1, 2, 4, 8, 9, 5, 3, 6, 7 };
+		int post[] = { 8, 9, 4, 5, 2, 6, 7, 3, 1 };
+
+		int size = pre.length;
+		Node root = constructTree(pre, post, size);
+
+		System.out.println("Inorder traversal of the constructed tree:");
+		PreOrderInOrderPostOrderTraversal.inOrderTraversal(root);
+	}
 
 }
